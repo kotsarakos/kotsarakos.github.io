@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Virtual Library</title>
+
+    <!-- Link to the external CSS file for styling the webpage -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Background div with blur effect -->
+    <div class="background-blur"></div>
+
+    <!-- Main content div -->
+    <div class="content">
+        <!-- University logo and text -->
+        <img src="HUA_LOGO.jpg" alt="Logo" class="logo">
+        <p class="logo-text">HAROKOPIO UNIVERSITY</p>
+        <p class="logo-text-small">Informatics And Telematics</p>
+
+        <!-- Main application content -->
+        <div class="background">
+            <h1>Virtual Library</h1>
+            <div class="container">
+                
+                <!-- Section for adding a book -->
+                <section id="addBookSection">
+                    <h2>Add Book</h2>
+                    <div class="input-container">
+                        <form id="addBookForm">
+                            <label for="author">Author:<span class="required" title="Enter the author's name"> *</span></label>
+                            <input type="text" id="author" name="author" required>
+                            <label for="title">Title:<span class="required" title="Enter the title of the book"> *</span></label>
+                            <input type="text" id="title" name="title" required>
+                            <label for="genre">Genre:<span class="required" title="Select the genre of the book"> *</span></label>
+                            <select id="genre" name="genre" required>
+                                <option value="Science fiction">Science fiction</option>
+                                <option value="Satire">Satire</option>
+                                <option value="Drama">Drama</option>
+                                <option value="Action and Adventure">Action and Adventure</option>
+                                <option value="Romance">Romance</option>
+                                <option value="Mystery">Mystery</option>
+                                <option value="Horror">Horror</option>
+                            </select>
+                            <label for="price">Price:<span class="required" title="Enter the correct book price (numbers only)"> *</span></label>
+                            <input type="text" id="price" name="price" required>
+                            <button type="submit">Add Book</button>
+                        </form>
+                        <!-- Response message container for adding a book -->
+                        <div id="addBookResponse"></div>
+                    </div>
+                </section>
+
+                <!-- Section for searching a book -->
+                <section id="searchBookSection" class="hidden">
+                    <h2>Search Book</h2>
+                    <div class="input-container">
+                        <form id="searchBookForm">
+                            <label for="keyword">Keyword:<span class="required" title="Search for a book by keyword"> *</span></label>
+                            <input type="text" id="keyword" name="keyword" required>
+                            <button type="submit">Search</button>
+                        </form>
+                        <!-- Search results container -->
+                        <div id="searchResults"></div>
+                    </div>
+                </section>
+
+                <!-- Slider for switching between sections -->
+                <div class="slider-container">
+                    <input type="range" min="0" max="1" value="0" id="sectionSlider">
+                </div>
+            </div> <!-- End of .container -->
+        </div> <!-- End of .background -->
+    </div>
+
+    <!-- Footer section with copyright information -->
+    <div class="copyright">
+        <p>&copy; 2024 Virtual Library. All rights reserved.</p>
+    </div>
+
+    <!-- External JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>
