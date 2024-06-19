@@ -1,0 +1,221 @@
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('library_photo.jpg') no-repeat center center fixed;
+    background-size: cover;
+    filter: blur(5px); /* Adjust the value for the desired level of blur */
+    z-index: -1; /* Position behind the rest of the content */
+}
+
+/* Container styles */
+.container {
+    position: relative;
+    z-index: 1; /* Position above the blurred background */
+    color: white; /* Adjust text color based on background */
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+.background {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Slider container styles */
+.slider-container {
+    position: absolute; /* Position the slider absolutely inside the .container */
+    bottom: 10px; /* Adjust the distance from the bottom */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center horizontally */
+    width: 90px; /* Adjust width for the slider container */
+    display: flex;
+    justify-content: center;
+}
+
+/* Slider styles */
+.slider-container input[type=range] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 90px; /* Adjust width */
+    height: 40px; /* Adjust height */
+    background: rgb(0, 0, 0); /* Slider background color */
+    outline: none;
+    opacity: 0.7;
+    transition: opacity .15s ease-in-out;
+    cursor: pointer;
+    border-radius: 5px; /* Rounded ends */
+}
+
+.slider-container input[type=range]:hover {
+    opacity: 1;
+}
+
+.slider-container input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 28px; /* Adjust thumb width */
+    height: 28px; /* Adjust thumb height */
+    background: #007BFF; /* Thumb color */
+    cursor: pointer;
+    border-radius: 50%; /* Circular thumb */
+    box-shadow: 0 0 5px rgb(0, 0, 0);
+}
+
+/* Section styles */
+section {
+    margin-bottom: 20px;
+    width: 100%;
+    height: 100%;
+}
+
+h1 {
+    text-align: center;
+    font-size: 3em;
+    color: #a00e0e;
+    text-shadow: 
+        -1px -1px 0 #000,  
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #ffffff;
+    text-align: center;
+}
+
+/* Form styles */
+.input-container {
+    margin-bottom: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-container label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.input-container input,
+.input-container select {
+    margin-bottom: 10px;
+    padding: 5px;
+    width: calc(100% - 10px);
+}
+
+.input-container button {
+    padding: 10px 15px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.input-container button:hover {
+    background-color: #0056b3;
+}
+
+/* Required field indicator styles */
+.required {
+    color: red;
+    font-size: 1.2rem;
+}
+
+input:focus + .required {
+    opacity: 0.5;
+}
+
+/* Animation styles */
+.hidden {
+    display: none;
+}
+
+/* Active section style */
+.active-section {
+    display: block;
+}
+
+#addBookResponse,
+#searchResults {
+    color: white; /* White text color */
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Logo styles */
+.logo {
+    position: absolute; /* Position logo absolutely */
+    top: 10px; /* Distance from top of the page */
+    left: 10px; /* Distance from left of the page */
+    width: 100px; /* Width of the image */
+    height: auto; /* Auto height to maintain aspect ratio */
+    z-index: 1000; /* Layer order to appear above other elements */
+}
+
+.logo-text {
+    position: absolute; /* Position text absolutely */
+    top: 20px; /* Distance from top of the page */
+    left: 120px; /* Distance from left of the page (next to logo) */
+    color: white; /* Text color */
+    font-weight: bold; /* Bold text */
+    font-size: 1.2em; /* Text size */
+    z-index: 1000; /* Layer order to appear above other elements */
+}
+
+.logo-text-small {
+    position: absolute; /* Position text absolutely */
+    top: 42px; /* Distance from top of the page */
+    left: 132px; /* Distance from left of the page (next to logo) */
+    color: white; /* Text color */
+    font-weight: bold; /* Bold text */
+    font-size: 1.0em; /* Text size */
+    z-index: 1000; /* Layer order to appear above other elements */
+}
+
+/* Copyright footer styles */
+.copyright {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: black; /* Background color */
+    color: white; /* Text color */
+    text-align: center;
+    padding: 10px 0; /* Padding around the content */
+    z-index: 1000; /* Layer order to appear above other elements */
+}
